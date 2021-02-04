@@ -1,0 +1,21 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet  author="maulik.kakadiya"  id="1">
+        <createTable  tableName="search_item">
+            <column  name="id"  type="INT"/>
+            <column  name="title"  type="varchar(255)"/>
+            <column  name="tags"  type="varchar(255)"/>
+            <column  name="submission_date"  type="timestamp"/>
+            <column  name="text"  type="varchar(1024)"/>
+            <column  name="url"  type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="maulik.kakadiya" id="2">
+        <sqlFile path="db/sql/search_item_data.sql" />
+    </changeSet>
+</databaseChangeLog>
