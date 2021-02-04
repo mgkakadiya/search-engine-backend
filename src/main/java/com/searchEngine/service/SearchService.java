@@ -17,7 +17,6 @@ public class SearchService {
     SearchItemRepository searchItemRepository;
 
     public List<SearchItem> findSuggestionByKeyword(String keyword, int pageNo, int pageSize) {
-        //default dropdown menu item length is 10
         Page page = searchItemRepository.findByTitleStartsWithIgnoreCase(keyword, PageRequest.of(pageNo, pageSize, Sort.by(Sort.Direction.ASC, "title")));
         return page.getContent();
     }
